@@ -13,6 +13,7 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     overflow: hidden;
+    flex-direction: column;
 }
 
 /* Heart Styling */
@@ -52,37 +53,44 @@ body {
     50% { transform: rotate(-45deg) scale(1.2); }
 }
 
-/* Message */
-.message {
-    position: absolute;
-    top: 70%;
+/* Romantic Text */
+.text {
     color: white;
     font-size: 2em;
+    text-align: center;
     text-shadow: 2px 2px 10px #000;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 2s ease;
+    max-width: 80%;
+    line-height: 1.4;
 }
 </style>
 </head>
 <body>
 
 <div class="heart" id="heart"></div>
-<div class="message" id="message">I LOVE YOU ❤️</div>
+
+<div class="text" id="romanticText">
+    Every heartbeat of mine whispers your name,<br>
+    In every moment, in every place, it's always you.<br>
+    Today, tomorrow, and forever — I choose you. ❤️
+             ❤️ I Love You Deep ❤️
+</div>
 
 <script>
 window.onload = function() {
     const heart = document.getElementById("heart");
-    const message = document.getElementById("message");
+    const text = document.getElementById("romanticText");
 
-    // Show heart for 2 seconds, then fade out
+    // Heart stays for 2 seconds
     setTimeout(() => {
         heart.style.opacity = "0";
-        message.style.opacity = "1";
     }, 2000);
 
-    // Completely remove heart after fade
+    // Remove heart and show romantic text
     setTimeout(() => {
         heart.style.display = "none";
+        text.style.opacity = "1";
     }, 3000);
 };
 </script>
